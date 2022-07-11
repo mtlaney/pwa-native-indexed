@@ -1,6 +1,6 @@
 # pwa-native-indexed
 
-## About the application
+## About the Application
 
 Base FrontEnd - Angular
 Build Wrapper - Ionic
@@ -8,6 +8,12 @@ Build Wrapper - Ionic
 PWA - Angular PWA with Service Workers
 
 Offline - Photos are stored in IndexedDB, and offline key/value and object DB - CRUD operations are stored in LocalStorage, persistent key/value storage
+
+### to run as Angular App locally
+
+cd into branch
+`npm install`
+`ionic serve`
 
 ### to run as PWA locally -
 
