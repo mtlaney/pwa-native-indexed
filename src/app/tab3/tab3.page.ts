@@ -98,15 +98,6 @@ export class Tab3Page {
     this.router.navigate(['./tabs/add-employee']);
   }
 
-  addCheckbox(event, checkbox: String) {
-    if (event.detail.checked) {
-      this.checked.push(checkbox);
-    } else {
-      let index = this.removeCheckedFromArray(checkbox);
-      this.checked.splice(index, 1);
-    }
-  }
-
   //Removes checkbox from array when you uncheck it
   removeCheckedFromArray(checkbox: String) {
     return this.checked.findIndex((category) => {

@@ -13,7 +13,11 @@
       <ion-col size="12" class="ion-no-margin ion-no-padding title">
         <ion-item lines="none">
           <!-- Angular module(Angular SVG round progressbar) that uses SVG to create a circular progressbar -->
-          <round-progress current="1" max="2" color="#376839"></round-progress
+          <round-progress
+            [current]="1"
+            [max]="2"
+            color="#376839"
+          ></round-progress
           ><br />
           <div class="progress-text">1/2</div>
           <ion-label class="ion-text-end">
@@ -199,9 +203,9 @@
         <ion-item lines="none">
           <!-- Angular module(Angular SVG round progressbar) that uses SVG to create a circular progressbar -->
           <round-progress
-            current="2"
-            max="2"
-            color="#45ccce"
+            [current]="2"
+            [max]="2"
+            color="#376839"
             value="1/2"
           ></round-progress>
           <div class="progress-text">2/2</div>
