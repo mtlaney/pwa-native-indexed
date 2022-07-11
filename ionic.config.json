@@ -1,0 +1,7 @@
+{
+  "name": "pwa-native-indexed",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

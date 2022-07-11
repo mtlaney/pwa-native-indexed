@@ -1,0 +1,40 @@
+.desktop {
+  ion-router-outlet {
+    margin-top: 56px;
+    margin-bottom: 56px;
+  }
+
+  ion-toolbar {
+    --background: #376839;
+    margin-bottom: 56px;
+  }
+
+  .link {
+    --color: var(--ion-color-light);
+  }
+
+  .active-link {
+    --color: var(--ion-color-primary);
+  }
+}
+
+.text {
+  color: white;
+  margin: auto;
+  margin-left: 50px;
+  }
+  .text-small {
+    font-size: 14px;
+    color: white;
+  }
+.footer {
+  width: 100%;
+  color: #fff;
+  font-weight: bold;
+  background: #376839;
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+  position: fixed;
+  bottom: 0px;
+}

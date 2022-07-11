@@ -1,0 +1,371 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Update</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid class="ion-no-margin">
+    <!-- form one here -->
+    <ion-row *ngIf="isFormOne">
+      <ion-col size="12" class="ion-no-margin ion-no-padding title">
+        <ion-item lines="none">
+          <!-- Angular module(Angular SVG round progressbar) that uses SVG to create a circular progressbar -->
+          <round-progress current="1" max="2" color="#376839"></round-progress
+          ><br />
+          <div class="progress-text">1/2</div>
+          <ion-label class="ion-text-end">
+            <h2 class="ion-text-wrap">Personal information</h2>
+            <p class="ion-text-wrap">Next: Other Info</p>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12" class="form">
+        <form
+          [formGroup]="form_one"
+          (ngSubmit)="next(form_one.value)"
+          class="ion-margin-top"
+        >
+          <ion-item lines="none">
+            <ion-label position="stacked" color="accent"
+              >First Name <span>*</span></ion-label
+            >
+            <ion-input
+              formControlName="firstName"
+              type="text"
+              placeholder="Enter your first name"
+            ></ion-input>
+          </ion-item>
+          <!-- Error messages -->
+          <div class="validation-errors">
+            <ng-container
+              *ngFor="let validation of form_one_validation_messages.firstName"
+            >
+              <div
+                class="error-message"
+                *ngIf="form_one.get('firstName').hasError(validation.type) && (form_one.get('firstName').dirty || form_one.get('firstName').touched)"
+              >
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <ion-item lines="none">
+            <ion-label position="stacked" color="accent"
+              >Last Name <span>*</span></ion-label
+            >
+            <ion-input
+              formControlName="lastName"
+              type="text"
+              placeholder="Enter your last name"
+            ></ion-input>
+          </ion-item>
+          <!-- Error messages -->
+          <div class="validation-errors">
+            <ng-container
+              *ngFor="let validation of form_one_validation_messages.lastName"
+            >
+              <div
+                class="error-message"
+                *ngIf="form_one.get('lastName').hasError(validation.type) && (form_one.get('lastName').dirty || form_one.get('lastName').touched)"
+              >
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <ion-item lines="none">
+            <ion-label position="stacked" color="accent"
+              >Gender <span>*</span></ion-label
+            >
+            <ion-radio-group formControlName="gender" value="male">
+              <ion-row>
+                <ion-col>
+                  <ion-item lines="none">
+                    <ion-radio value="male" color="accent"></ion-radio>
+                    <ion-label>Male</ion-label>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item lines="none">
+                    <ion-radio value="female" color="accent"></ion-radio>
+                    <ion-label>Female</ion-label>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-radio-group>
+          </ion-item>
+          <!-- Error messages -->
+          <div class="validation-errors">
+            <ng-container
+              *ngFor="let validation of form_one_validation_messages.gender"
+            >
+              <div
+                class="error-message"
+                *ngIf="form_one.get('gender').hasError(validation.type) && (form_one.get('gender').dirty || form_one.get('gender').touched)"
+              >
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <ion-item lines="none">
+            <ion-label position="stacked" color="accent"
+              >Email <span>*</span></ion-label
+            >
+            <ion-input
+              formControlName="email"
+              type="email"
+              placeholder="Enter your email"
+            ></ion-input>
+          </ion-item>
+          <!-- Error messages -->
+          <div class="validation-errors">
+            <ng-container
+              *ngFor="let validation of form_one_validation_messages.email"
+            >
+              <div
+                class="error-message"
+                *ngIf="form_one.get('email').hasError(validation.type) && (form_one.get('email').dirty || form_one.get('email').touched)"
+              >
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <ion-item lines="none">
+            <ion-label position="stacked" color="accent"
+              >Password <span>*</span></ion-label
+            >
+            <ion-input
+              formControlName="password"
+              type="password"
+              placeholder="Enter your password"
+            ></ion-input>
+          </ion-item>
+          <!-- Error messages -->
+          <div class="validation-errors">
+            <ng-container
+              *ngFor="let validation of form_one_validation_messages.password"
+            >
+              <div
+                class="error-message"
+                *ngIf="form_one.get('password').hasError(validation.type) && (form_one.get('password').dirty || form_one.get('password').touched)"
+              >
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <ion-item lines="none">
+            <ion-label position="stacked" color="accent"
+              >Confirm Password <span>*</span></ion-label
+            >
+            <ion-input
+              formControlName="confirmPass"
+              type="password"
+              placeholder="Enter your confirm password"
+            >
+            </ion-input>
+          </ion-item>
+          <!-- Error messages -->
+          <div class="validation-errors">
+            <ng-container
+              *ngFor="let validation of form_one_validation_messages.confirmPass"
+            >
+              <div
+                class="error-message"
+                *ngIf="form_one.get('confirmPass').hasError(validation.type) && (form_one.get('confirmPass').dirty || form_one.get('confirmPass').touched)"
+              >
+                {{ validation.message }}
+              </div>
+            </ng-container>
+            <div
+              class="error-message"
+              *ngIf="!form_one.get('confirmPass').errors && form_one.hasError('passwordNotMatch') && (form_one.get('confirmPass').dirty || form_one.get('confirmPass').touched)"
+            >
+              Password and Confirm Password fields should match
+            </div>
+          </div>
+          <ion-button
+            class="ion-float-end"
+            type="submit"
+            [disabled]="!form_one.valid"
+            >Next</ion-button
+          >
+        </form>
+      </ion-col>
+    </ion-row>
+    <!-- form two here -->
+    <ion-row *ngIf="!isFormOne">
+      <ion-col size="12" class="ion-no-margin ion-no-padding title">
+        <ion-item lines="none">
+          <!-- Angular module(Angular SVG round progressbar) that uses SVG to create a circular progressbar -->
+          <round-progress
+            current="2"
+            max="2"
+            color="#45ccce"
+            value="1/2"
+          ></round-progress>
+          <div class="progress-text">2/2</div>
+          <ion-label class="ion-text-end">
+            <h2 class="ion-text-wrap">Other Info</h2>
+            <p class="ion-text-wrap">Prev: Personal information</p>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12" class="form">
+        <form
+          [formGroup]="form_two"
+          (ngSubmit)="submitformTwo(form_two.value)"
+          class="ion-margin-top"
+        >
+          <ion-item lines="none">
+            <ion-label position="stacked" color="accent"
+              >Address 1 <span>*</span></ion-label
+            >
+            <ion-input
+              formControlName="address1"
+              type="text"
+              placeholder="Enter your address 1"
+            ></ion-input>
+          </ion-item>
+          <!-- Error messages -->
+          <div class="validation-errors">
+            <ng-container
+              *ngFor="let validation of form_two_validation_messages.address1"
+            >
+              <div
+                class="error-message"
+                *ngIf="form_two.get('address1').hasError(validation.type) && (form_two.get('address1').dirty || form_two.get('address1').touched)"
+              >
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <ion-item lines="none">
+            <ion-label position="stacked" color="accent"
+              >Address 2 <span>*</span></ion-label
+            >
+            <ion-input
+              formControlName="address2"
+              type="text"
+              placeholder="Enter your address 2"
+            ></ion-input>
+          </ion-item>
+          <!-- Error messages -->
+          <div class="validation-errors">
+            <ng-container
+              *ngFor="let validation of form_two_validation_messages.address2"
+            >
+              <div
+                class="error-message"
+                *ngIf="form_two.get('address2').hasError(validation.type) && (form_two.get('address2').dirty || form_two.get('address2').touched)"
+              >
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <ion-item lines="none">
+            <ion-label position="stacked" color="accent"
+              >Area <span>*</span></ion-label
+            >
+            <ion-input
+              formControlName="area"
+              type="text"
+              placeholder="Enter your area"
+            ></ion-input>
+          </ion-item>
+          <!-- Error messages -->
+          <div class="validation-errors">
+            <ng-container
+              *ngFor="let validation of form_two_validation_messages.area"
+            >
+              <div
+                class="error-message"
+                *ngIf="form_two.get('area').hasError(validation.type) && (form_two.get('area').dirty || form_two.get('area').touched)"
+              >
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <ion-item lines="none">
+            <ion-label position="stacked" color="accent"
+              >Pincode <span>*</span></ion-label
+            >
+            <ion-input
+              formControlName="pincode"
+              type="tel"
+              placeholder="Enter your pincode"
+            ></ion-input>
+          </ion-item>
+          <!-- Error messages -->
+          <div class="validation-errors">
+            <ng-container
+              *ngFor="let validation of form_two_validation_messages.pincode"
+            >
+              <div
+                class="error-message"
+                *ngIf="form_two.get('pincode').hasError(validation.type) && (form_two.get('pincode').dirty || form_two.get('pincode').touched)"
+              >
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <ion-item lines="none">
+            <ion-label position="stacked" color="accent"
+              >State <span>*</span></ion-label
+            >
+            <ion-input
+              formControlName="state"
+              type="text"
+              placeholder="Enter your state"
+            ></ion-input>
+          </ion-item>
+          <!-- Error messages -->
+          <div class="validation-errors">
+            <ng-container
+              *ngFor="let validation of form_two_validation_messages.state"
+            >
+              <div
+                class="error-message"
+                *ngIf="form_two.get('state').hasError(validation.type) && (form_two.get('state').dirty || form_two.get('state').touched)"
+              >
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <ion-item lines="none">
+            <ion-label position="stacked" color="accent"
+              >Country <span>*</span></ion-label
+            >
+            <ion-input
+              formControlName="country"
+              type="text"
+              placeholder="Enter your country"
+            ></ion-input>
+          </ion-item>
+          <!-- Error messages -->
+          <div class="validation-errors">
+            <ng-container
+              *ngFor="let validation of form_two_validation_messages.country"
+            >
+              <div
+                class="error-message"
+                *ngIf="form_two.get('country').hasError(validation.type) && (form_two.get('country').dirty || form_two.get('country').touched)"
+              >
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <ion-button class="ion-float-start" (click)="prev()"
+            >Previous</ion-button
+          >
+          <ion-button
+            class="ion-float-end"
+            type="submit"
+            [disabled]="!form_two.valid"
+            >Submit</ion-button
+          >
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

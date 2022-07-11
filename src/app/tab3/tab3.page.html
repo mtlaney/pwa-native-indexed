@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Employees </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="addStatic()">
+        <ion-icon name="add" color="accent"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid class="ion-no-margin ion-no-padding">
+    <ion-row *ngIf="items?.length > 0">
+      <ion-col size="12" class="ion-no-margin ion-no-padding">
+        <table class="ion-text-center">
+          <tr>
+            <th>
+              <ion-checkbox disabled></ion-checkbox>
+            </th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+          <tr *ngFor="let item of items; let i = index">
+            <td>
+              <ion-checkbox (ionChange)="addCheckbox($event,i)"></ion-checkbox>
+            </td>
+            <td class="ion-text-wrap">{{ item.firstName }}</td>
+            <td class="ion-text-wrap">{{ item.lastName }}</td>
+            <td class="ion-text-wrap">{{ item.gender }}</td>
+            <td class="ion-text-wrap">{{ item.email }}</td>
+            <td>
+              <ion-button fill="clear" size="small" (click)="edit(i)">
+                <ion-icon name="create-outline" color="accent"></ion-icon>
+              </ion-button>
+              <ion-button fill="clear" size="small" (click)="delete(i)">
+                <ion-icon name="trash-outline" color="accent"></ion-icon>
+              </ion-button>
+            </td>
+          </tr>
+        </table>
+      </ion-col>
+      <ion-button
+        class="ion-text-capitalize ion-padding"
+        (click)="deleteAll()"
+        color="accent"
+      >
+        <span>Delete All</span>
+      </ion-button>
+    </ion-row>
+    <ion-row *ngIf="items?.length == 0" class="not-found">
+      <ion-col size="12">
+        <ion-img src="/assets/imgs/logo/404.svg"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button size="small" color="accent" (click)="addEmployee()">
+      <ion-icon name="add" color="#376839"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
