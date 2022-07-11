@@ -1,11 +1,18 @@
 # pwa-native-indexed
 
-to run as PWA locally offling -
+### to run as PWA locally -
 
 cd into branch
+`npm install`
+`ionic build --prod`
+`http-server -p 8080 -c-1 www`
 
-npm install
+### to run as Android Native on Studio -
 
-ionic build --prod
-
-http-server -p 8080 -c-1 www
+cd into desired branch
+`npm install`
+`ionic build`
+`ionic cap add android`
+`ionic cap copy`
+`ionic cap sync`
+`ionic cap open android`
