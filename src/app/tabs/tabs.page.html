@@ -1,12 +1,12 @@
-<ion-tabs *ngIf="!isDesktop">
+<ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="view-employees">
+    <ion-tab-button tab="view-items">
       <ion-icon name="people-outline"></ion-icon>
-      <ion-label>Employees</ion-label>
+      <ion-label>Items</ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="add-employee">
+    <ion-tab-button tab="add-item">
       <ion-icon name="person-add-outline"></ion-icon>
-      <ion-label>Add Employee</ion-label>
+      <ion-label>Add Item</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="photos">
@@ -15,39 +15,3 @@
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
-
-<div *ngIf="isDesktop" class="desktop">
-  <ion-header mode="ios">
-    <ion-toolbar>
-      <ion-row class="ion-align-items-center">
-        <ion-col size="2">
-          <h1 class="text">NRM-MESA</h1>
-        </ion-col>
-        <ion-col size="2">
-          <span class="text-small"
-            >Modern Enterprise Solutions Application</span
-          >
-        </ion-col>
-        <ion-col size="8"> </ion-col>
-      </ion-row>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="view-employees">
-        <ion-icon name="people-outline"></ion-icon>
-        <ion-label>Employees</ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="add-employee">
-        <ion-icon name="person-add-outline"></ion-icon>
-        <ion-label>Add Employee</ion-label>
-      </ion-tab-button>
-
-      <ion-tab-button tab="photos">
-        <ion-icon name="images"></ion-icon>
-        <ion-label>Photos</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
-</div>

@@ -1,28 +1,7 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title> Add Employee </ion-title>
-  </ion-toolbar>
-</ion-header>
 <ion-content>
   <ion-grid class="ion-no-margin">
     <!-- form one here -->
     <ion-row *ngIf="isFormOne">
-      <ion-col size="12" class="ion-no-margin ion-no-padding title">
-        <ion-item lines="none">
-          <!-- Angular module(Angular SVG round progressbar) that uses SVG to create a circular progressbar -->
-          <round-progress
-            [current]="1"
-            [max]="2"
-            color="#376839"
-          ></round-progress
-          ><br />
-          <div class="progress-text">1/2</div>
-          <ion-label class="ion-text-end">
-            <h2 class="ion-text-wrap">Personal information</h2>
-            <p class="ion-text-wrap">Next: Other Info</p>
-          </ion-label>
-        </ion-item>
-      </ion-col>
       <ion-col size="12" class="form">
         <form
           [formGroup]="form_one"
@@ -195,22 +174,6 @@
     </ion-row>
     <!-- form two here -->
     <ion-row *ngIf="!isFormOne">
-      <ion-col size="12" class="ion-no-margin ion-no-padding title">
-        <ion-item lines="none">
-          <!-- Angular module(Angular SVG round progressbar) that uses SVG to create a circular progressbar -->
-          <round-progress
-            [current]="2"
-            [max]="2"
-            color="#376839"
-            value="1/2"
-          ></round-progress>
-          <div class="progress-text">2/2</div>
-          <ion-label class="ion-text-end">
-            <h2 class="ion-text-wrap">Other Info</h2>
-            <p class="ion-text-wrap">Prev: Personal information</p>
-          </ion-label>
-        </ion-item>
-      </ion-col>
       <ion-col size="12" class="form">
         <form
           [formGroup]="form_two"

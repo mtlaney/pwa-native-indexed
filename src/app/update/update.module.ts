@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { UpdatePageRoutingModule } from './update-routing.module';
 
 import { UpdatePage } from './update.page';
-import { RoundProgressModule } from 'angular-svg-round-progressbar';
+
 
 @NgModule({
   imports: [
@@ -15,7 +15,6 @@ import { RoundProgressModule } from 'angular-svg-round-progressbar';
     FormsModule,
     IonicModule,
     UpdatePageRoutingModule,
-    RoundProgressModule,
     ReactiveFormsModule
   ],
   declarations: [UpdatePage]

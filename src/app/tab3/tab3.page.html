@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Employees </ion-title>
+    <ion-title> Items </ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="addStatic()">
         <ion-icon name="add" color="accent"></ion-icon>
@@ -10,6 +10,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <section class="jumbo">
+    <div class="container mainContainer">
+      <h2>My Items</h2>
+      <!-- setting the main cards in the image -->
+    </div>
+  </section>
+
   <ion-grid class="ion-no-margin ion-no-padding">
     <ion-row *ngIf="items?.length > 0">
       <ion-col size="12" class="ion-no-margin ion-no-padding">
